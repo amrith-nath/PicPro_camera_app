@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:picpro/core/colors/colors.dart';
+import 'package:picpro/views/home/screen_home.dart';
 import 'package:picpro/views/splash/screen_splash.dart';
 
 void main() {
