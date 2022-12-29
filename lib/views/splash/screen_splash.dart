@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:picpro/core/colors/colors.dart';
+import 'package:picpro/core/fonts/fonts.dart';
 
 class ScreenSplash extends StatelessWidget {
   const ScreenSplash({super.key});
@@ -9,7 +11,28 @@ class ScreenSplash extends StatelessWidget {
       body: SafeArea(
           child: Center(
         child: Center(
-          child: CircularProgressIndicator(),
+          child: CircleAvatar(
+            radius: 80,
+            backgroundColor: kBlack,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'PIC ',
+                      style: GoogleFont.splashTextStyle,
+                    ),
+                    Text(
+                      'PRO',
+                      style: GoogleFont.splashTextStyleRed,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ),
       )),
     );
