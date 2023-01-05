@@ -13,4 +13,10 @@ class GoogleFont {
     fontSize: 22,
     fontWeight: FontWeight.bold,
   );
+
+  static final appbarTextStyle = GoogleFonts.poppins(
+    color: kWhite,
+    fontSize: 22,
+    fontWeight: FontWeight.normal,
+  );
 }

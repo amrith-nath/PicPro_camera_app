@@ -17,21 +17,24 @@ class _ScreenSplashState extends State<ScreenSplash>
     with TickerProviderStateMixin {
   AnimationController? _animationController;
   Animation<double>? _animation;
+  Animation<double>? _secondAnimation;
 
   @override
   void initState() {
     _animationController = AnimationController(
         vsync: this,
         duration: const Duration(
-          milliseconds: 500,
+          milliseconds: 600,
         ));
     _animationController!.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Get.to(() => ScreenHome(), transition: Transition.fade);
-        _animationController!.reset();
+        Get.off(() => ScreenHome(), transition: Transition.fade);
+        // _animationController!.reset();
       }
     });
-    _animation = Tween(begin: 1.0, end: 5.0).animate(_animationController!);
+    _animation = Tween(begin: 1.0, end: 7.0).animate(_animationController!);
+    _secondAnimation =
+        Tween(begin: 1.0, end: 0.0).animate(_animationController!);
     // _animationController!.forward();
     startNavigate();
     super.initState();
@@ -50,29 +53,36 @@ class _ScreenSplashState extends State<ScreenSplash>
                 child: CircleAvatar(
                   radius: 80,
                   backgroundColor: kBlack,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SvgPicture.asset(
-                        splashIcon,
-                        color: kWhite,
-                        width: 50,
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'PIC ',
-                            style: GoogleFont.splashTextStyle,
+                  child: AnimatedBuilder(
+                      animation: _secondAnimation!,
+                      builder: (context, _) {
+                        return Transform.scale(
+                          scale: _secondAnimation!.value,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SvgPicture.asset(
+                                splashIcon,
+                                color: kWhite,
+                                width: 50,
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'PIC ',
+                                    style: GoogleFont.splashTextStyle,
+                                  ),
+                                  Text(
+                                    'PRO',
+                                    style: GoogleFont.splashTextStyleRed,
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
-                          Text(
-                            'PRO',
-                            style: GoogleFont.splashTextStyleRed,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        );
+                      }),
                 ),
               );
             }),
@@ -81,7 +91,7 @@ class _ScreenSplashState extends State<ScreenSplash>
   }
 
   Future startNavigate() async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 3));
     _animationController!.forward();
   }
 

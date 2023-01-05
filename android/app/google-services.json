@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "824065700670",
+    "project_id": "picpro-d24c4",
+    "storage_bucket": "picpro-d24c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824065700670:android:3b99cf934b36c3aeb7b26f",
+        "android_client_info": {
+          "package_name": "com.example.picpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824065700670-bgula1oiqkq7a5m6duej86o9d8t9bbuc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.picpro",
+            "certificate_hash": "8fa25a260b58427b9590125fcb54201bccb76927"
+          }
+        },
+        {
+          "client_id": "824065700670-b1up8ijjse7veaboi1itlgp5bi2kstp1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEmVFC8KqW_qcPTJSjhrp2KqFYNTJ-J0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824065700670-b1up8ijjse7veaboi1itlgp5bi2kstp1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
