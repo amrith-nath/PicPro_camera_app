@@ -15,9 +15,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^1.1.6
+  flutter_tflite: ^1.0.1
+  gallery_saver: ^2.3.2
   get: ^4.6.5
   google_fonts: ^3.0.1
   google_ml_kit: ^0.13.0
+  permission_handler: ^10.2.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -29,6 +32,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/svg/
+    - assets/models/
   # example:
   # fonts:
   #   - family: Schyler

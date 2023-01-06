@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -5,6 +7,7 @@ import 'package:picpro/core/colors/colors.dart';
 import 'package:picpro/core/constants/svg.dart';
 import 'package:picpro/core/fonts/fonts.dart';
 import 'package:picpro/views/home/screen_home.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class ScreenSplash extends StatefulWidget {
   const ScreenSplash({super.key});
@@ -90,7 +93,19 @@ class _ScreenSplashState extends State<ScreenSplash>
     );
   }
 
+  getPermission() async {
+    var status = await Permission.camera.status;
+    var storageStatus = await Permission.storage.status;
+
+    if (status.isDenied) {
+      getPermission();
+    } else if (storageStatus.isDenied) {
+      getPermission();
+    }
+  }
+
   Future startNavigate() async {
+    await getPermission();
     await Future.delayed(const Duration(seconds: 3));
     _animationController!.forward();
   }
